@@ -1,11 +1,22 @@
 package com.masondubelbeis;
 
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Main {
+    private static int input;
+
     public static void main(String[] args) {
-        consolePrompt();
-        int input = userInput();
+
+        do {
+            consolePrompt();
+            input = userInput();
+
+            if (input == 7) {
+                System.exit(0);
+            }
+        } while (input > 7);
+
 
         switch(input) {
             case 1:
@@ -28,6 +39,7 @@ public class Main {
                 break;
             case 7:
                 System.out.println("Exiting Program");
+                System.exit(0);
                 break;
             default:
                 System.out.println("Not Valid Option");
@@ -36,6 +48,7 @@ public class Main {
     }
 
     public static void consolePrompt() {
+        System.out.println();
         System.out.println("1 - Book Car");
         System.out.println("2 - View All User Booked Cars");
         System.out.println("3 - View All Bookings");
