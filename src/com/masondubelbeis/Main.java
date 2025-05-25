@@ -43,10 +43,10 @@ public class Main {
         System.out.println("5 - View Available Electric Cars");
         System.out.println("6 - View All Users");
         System.out.println("7 - Exit");
+        System.out.print("Please Enter a Valid Input (1-7): ");
     }
 
     public static int userInput() {
-        System.out.print("Please Enter a Valid Input (1-7): ");
         Scanner input = new Scanner(System.in);
         return input.nextInt();
     }
