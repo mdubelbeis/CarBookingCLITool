@@ -1,17 +1,24 @@
 package com.masondubelbeis.user;
 
+import java.util.UUID;
+
 public class UserDAO {
-    private static String[] users = {};
+    private static User[] users = {};
 
-    public UserDAO() {
-
+    static {
+        users = new User[]{
+                new User(UUID.randomUUID(), "Mason", "Dubelbeis", "Mason.Dubelbeis@gmail.com"),
+                new User(UUID.randomUUID(), "Kayla", "Dubelbeis", "Kayla.Dubelbeis@gmail.com"),
+        };
     }
 
-    public static String[] getUsers() {
+    public static User[] getUsers() {
         return users;
     }
 
-    public static void setUsers(String[] users) {
+    public static void setUsers(User[] users) {
         UserDAO.users = users;
     }
+
+
 }
