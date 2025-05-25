@@ -15,6 +15,8 @@ public class Main {
             if (input == 7) {
                 System.exit(0);
             }
+            System.out.println();
+            System.out.println("Invalid input");
         } while (input > 7);
 
 
