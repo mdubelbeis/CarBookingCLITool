@@ -1,5 +1,7 @@
 package com.masondubelbeis;
 
+import com.masondubelbeis.user.UserService;
+
 import java.sql.SQLOutput;
 import java.util.Scanner;
 
@@ -14,6 +16,7 @@ public class Main {
 
             if (input == 7) {
                 System.exit(0);
+                return;
             }
             System.out.println();
             System.out.println("Invalid input");
@@ -38,6 +41,15 @@ public class Main {
                 break;
             case 6:
                 System.out.println("Viewing All Users");
+                String[] users = UserService.getUsers();
+
+                if (users.length == 0) {
+                    System.out.println("No Stored Users...");
+                } else {
+                    for (String user: users) {
+                        System.out.println(user);
+                    }
+                }
                 break;
             case 7:
                 System.out.println("Exiting Program");
